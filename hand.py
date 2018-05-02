@@ -1,20 +1,28 @@
-import deck 
+from card import Card
 
 class Hand: 
-	values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8, 'Nine':9, 'Ten':10, 'Jack':10,
-             'Queen':10, 'King':10, 'Ace':11}
-
 	def __init__(self):
 		self.hand = []
 		self.value = 0
 		self.aces = 0
 
+	def __str__(self):
+		cards = '' 
+		for i in self.hand:
+			cards += str(i) + ', '
+		return cards
+
 	def add_card(self, card):
 		self.hand.append(card)
+		self.value += card.values[card.rank]
+		if card.rank == 'Ace': 
+			self.adjust_for_ace()
 
-	def determine_aces(self):
-		if self.aces > 0: 
-			
+
+	def adjust_for_ace(self):
+		if self.value > 21:
+			self.value -= 10 
+
 
 
 
