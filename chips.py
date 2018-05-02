@@ -8,7 +8,5 @@ class Chips:
 
 	def lose_bet(self): 
 		self.bank -= self.bet 
-
-	def set_bet(amount): 
-		self.bet = amount 
 		
+

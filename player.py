@@ -14,9 +14,11 @@ class Player(Hand, Chips):
 		print(self)
 		print('Total value: {}'.format(self.value))
 
-	def stay(self) 
-		continue 
-
+	def stay(self):
+		pass
+		
+	def set_bet(amount): 
+		self.bet = amount 
 
 if __name__ == '__main__':
 	player1 = Player() 
